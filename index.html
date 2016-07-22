@@ -1,27 +1,51 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Demo</title>
+  <meta charset="utf-8">
+  <title>Pathorder</title>
 </head>
 <body>
-    <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery-3.1.0.js"></script>
-    <script>
- 
-    $( document ).ready(function() {
- 
-      $( "a" ).click(function( event ) {
- 
-        alert( "Thanks for visiting!" );
-        event.preventDefault();
- 
-        $( this ).hide( "slow" );
- 
-      });
- 
+  <script src="https://fb.me/react-0.14.8.js"></script>
+  <script src="https://fb.me/react-dom-0.14.8.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>  
+  
+  <link href="css/survey.css" type="text/css" rel="stylesheet" />
+  <script src="js/survey.react.min.js"></script>
+
+  <script type="text/javascript">
+
+    var surveyJSON = { title: "Tell us, what technologies do you use?", pages: [
+      { name:"page1", questions: [ 
+        { type: "radiogroup", choices: [ "Yes", "No" ], isRequired: true, name: "frameworkUsing",title: "Do you use any front-end framework like Bootstrap?" },
+        { type: "checkbox", choices: ["Bootstrap","Foundation"], hasOther: true, isRequired: true, name: "framework", title: "What front-end framework do you use?", visible: false }
+      ]},
+      { name: "page2", questions: [
+        { type: "radiogroup", choices: ["Yes","No"],isRequired: true, name: "mvvmUsing", title: "Do you use any MVVM framework?" },
+        { type: "checkbox", choices: [ "AngularJS", "KnockoutJS", "React" ], hasOther: true, isRequired: true, name: "mvvm", title: "What MVVM framework do you use?", visible: false } ] },
+      { name: "page3",questions: [
+        { type: "comment", name: "about", title: "Please tell us about your main requirements for Survey library" } ] }
+    ],
+      triggers: [
+        { type: "visible", operator: "equal", value: "Yes", name: "frameworkUsing", questions: ["framework"]},
+        { type: "visible", operator: "equal", value: "Yes", name: "mvvmUsing", questions: ["mvvm"]}
+      ]
+    }
+
+    ReactDOM.render(
+      <ReactSurvey json={surveyJSON} onComplete={sendDataToServer}/>,
+      document.getElementById("surveyContainer"));
+
+    function sendDataToServer(survey) {
+      var resultAsString = JSON.stringify(survey.data);
+      alert(resultAsString); //send Ajax request to your web server.
     });
- 
-    </script>
+
+  </script>
+
+  <div id="surveyContainer"></div>
+
+
 </body>
 </html>
+
+
