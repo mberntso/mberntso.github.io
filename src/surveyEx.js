@@ -23,7 +23,7 @@ var survey = new ReactSurveyModel({
                 { type: "radiogroup",  name: "Convertible", isRequired: true, colCount: 4, visible: false, title: "Please select the car", hasOther: true, choices: ["Honda S2000", "Volkswagen Eos", "Volvo C70"]},
                 { type:"comment", name: "otherType", title: "Please describe the car.", isRequired: true, visible: false}
             ]});
-ReactDOM.render(<ReactSurvey model={survey} onComplete={sendDataToServer}/>, document.getElementById("surveyElement"));
+ReactDOM.render(<ReactSurvey model={survey} onComplete={sendDataToServer}/>, document.getElementById("surveyContainer"));
 
 function sendDataToServer(survey) {
   var resultAsString = JSON.stringify(survey.data);
