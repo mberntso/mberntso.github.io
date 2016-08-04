@@ -42,7 +42,7 @@ function makeButtons(index) {
         var t = document.createTextNode(survey[index][i]);
         para.appendChild(t);
         para.setAttribute("id", survey[index][i]);
-        para.onclick = decision(index, i);
+        para.onclick = function(){decision(index, i);return false;}
         document.body.appendChild(para);
     }
 }
