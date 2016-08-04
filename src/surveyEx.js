@@ -42,17 +42,17 @@ function makeButtons(index) {
         var t = document.createTextNode(survey[index][i]);
         para.appendChild(t);
         para.setAttribute("id", survey[index][i]);
-        para.setAttribute("onClick", "decision(index, i)");
+        para.onclick = decision(index, i);
         document.body.appendChild(para);
     }
 }
 
 function result(index, i) {
     // prints result message
-    var para = document.createElement("H3");
-    var t = document.createTextNode(survey[index][0]);
+    var para = document.createElement("H2");
+    var t = document.createTextNode(survey[index][i]);
     para.appendChild(t);
-    para.setAttribute("id", survey[index][0]);
+    para.setAttribute("id", survey[index][i]);
     document.body.appendChild(para);
 }
 
@@ -63,13 +63,19 @@ function backButton() {
 
     }
     // run through math to make parent vertex
-
+    // call replaceVertex(status)
 
 }
 
-function removeVertex(index) {
-    // called by the decision(re: index) function
+function replaceVertex(index) {
+    // remove all elements of the current vertex
 
+    for (i = 1; i < survey[index].length; i++) { 
+        document.body.removeChild(document.getElementById(survey[index][i]));
+    }
+
+    // now replace with vertex by index = status
+    makeVertex(status);
 
 }
 
