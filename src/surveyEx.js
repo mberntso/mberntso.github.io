@@ -29,7 +29,7 @@ function makeVertex() {
 
 function makeQuestion() {
   // make question heading
-  var para = document.createElement("H3");
+  var para = document.createElement("H2");
   var t = document.createTextNode(survey[status][0]);
   para.appendChild(t);
   para.setAttribute("id", survey[status][0]);
@@ -44,6 +44,7 @@ function makeButtons() {
     var t = document.createTextNode(survey[status][i]);
     para.appendChild(t);
     para.setAttribute("id", survey[status][i]);
+    para.setAttribute("class", "button");
     para.onclick = (function(i) {
       return function() {
         decision(i);
@@ -94,7 +95,7 @@ function decision(i) {
 function result() {
   // prints result message using updated status
   // status should be a vertex with only one entry: the message
-  var para = document.createElement("H2");
+  var para = document.createElement("H1");
   var t = document.createTextNode(survey[status][0]);
   para.appendChild(t);
   para.setAttribute("id", survey[status][0]);
