@@ -48,7 +48,12 @@ var survey = [
   v30,v31,v32,v33];
 
 var status = 0; // serves as the index of the vertex
-var parentStatus = 0; // used for the back button
+var parentStatus = [
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,
+  0,0]; // array of the parent vertex for each vertex
 var notBacking = true;  // used for the back button
 
 
@@ -103,14 +108,14 @@ function replaceVertex(index) {
 
   // check if the survey is at the result 
   // and not coming from the back button
-  if (survey[parentStatus][1] == "DONE" && notBacking) {
+  if (survey[parentStatus[status]][1] == "DONE" && notBacking) {
     // make result message
     result();
 
   } else {
     // make vertex
     makeVertex(status);
-    // reset backing to false (if backing was true)
+    // reset backing to false (if notBacking was false)
     notBacking = true;
 
 
@@ -120,17 +125,20 @@ function replaceVertex(index) {
 
 function decision(i) {
   // save status
-  parentStatus = status;
+  oldStatus = status;
 
   // determine new status
   var offset = 0;
-  for (k = 0; k < parentStatus; k++) {
+  for (k = 0; k < oldStatus; k++) {
     offset += survey[k].length - 1;
   }
   status = offset + i;
 
+  //set parent
+  parentStatus[status] = oldStatus;
+
   // replace old vertex
-  replaceVertex(parentStatus);
+  replaceVertex(parentStatus[status]);
 
 }
 
@@ -151,13 +159,13 @@ function backButton() {
 
     // set statuses
     oldStatus = status;
-    status = parentStatus;
+    status = parentStatus[oldStatus];
 
     // set backing flag
     notBacking = false;
 
     // replaceVertex uses global status, so replace the old status
-    replaceVertex(oldStatus)
+    replaceVertex(oldStatus);
 
   }
 
