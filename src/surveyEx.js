@@ -28,14 +28,16 @@ var v22 = ["Lymphoma text"];
 var v23 = ["Fairview case result text"];
 var v24 = ["Dr. Schuster text"];
 var v25 = ["Acute Myeloid Panel","Complete","Short"];
-var v26 = ["Complete Myeloproliferative Neoplasm Panel Result","DONE"];
-var v27 = ["Short Myeloproliferative Neoplasm Panel Result","DONE"];
-var v28 = ["Complete Acute Myeloid Panel Result","DONE"];
-var v29 = ["Short Acute Myeloid Panel Result","DONE"];
-var v30 = ["Complete Myeloproliferative Neoplasm Panel Result text"];
-var v31 = ["Short Myeloproliferative Neoplasm Panel Result text"];
-var v32 = ["Complete Acute Myeloid Panel Result text"];
-var v33 = ["Short Acute Myeloid Panel Result text"];
+var v26 = ["Lymphoid Result","DONE"];
+var v27 = ["Complete Myeloproliferative Neoplasm Panel Result","DONE"];
+var v28 = ["Short Myeloproliferative Neoplasm Panel Result","DONE"];
+var v29 = ["Complete Acute Myeloid Panel Result","DONE"];
+var v30 = ["Short Acute Myeloid Panel Result","DONE"];
+var v31 = ["Lymphoid Result text"];
+var v32 = ["Complete Myeloproliferative Neoplasm Panel Result text"];
+var v33 = ["Short Myeloproliferative Neoplasm Panel Result text"];
+var v34 = ["Complete Acute Myeloid Panel Result text"];
+var v35 = ["Short Acute Myeloid Panel Result text"];
 
 // survey question vertices
 // vertices must be placed into survey tree in Depth-First order
@@ -45,7 +47,7 @@ var survey = [
   v12,v13,v14,v15,v16,v17,
   v18,v19,v20,v21,v22,v23,
   v24,v25,v26,v27,v28,v29,
-  v30,v31,v32,v33];
+  v30,v31,v32,v33,v34,v35];
 
 var status = 0; // serves as the index of the vertex
 var parentStatus = [
@@ -53,7 +55,7 @@ var parentStatus = [
   0,0,0,0,0,0,0,0,
   0,0,0,0,0,0,0,0,
   0,0,0,0,0,0,0,0,
-  0,0]; // array of the parent vertex for each vertex
+  0,0,0,0]; // array of the parent vertex for each vertex
 var notBacking = true;  // used for the back button
 
 
