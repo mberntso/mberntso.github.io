@@ -33,11 +33,11 @@ var v27 = ["Complete Myeloproliferative Neoplasm Panel Result","DONE"];
 var v28 = ["Short Myeloproliferative Neoplasm Panel Result","DONE"];
 var v29 = ["Complete Acute Myeloid Panel Result","DONE"];
 var v30 = ["Short Acute Myeloid Panel Result","DONE"];
-var v31 = ["Lymphoid: FISH and flow cytometry, no known molecular marker (August 2016)."];
-var v32 = ["Complete Myeloproliferative Neoplasm Panel: (blood or bone marrow only) (includes Molecular NGS and rt-PCR BCR-ABL1) JAK2, CALR, MPL. BCR-ABL1 major quantitative (p210). BCR-ABL1 minor qualitative (p190)."];
-var v33 = ["Short Myeloproliferative Neoplasm Panel: (blood or bone marrow only) (includes Molecular NGS only) JAK2, CALR, MPL."];
-var v34 = ["Complete Acute Myeloid Panel: (Minimum 20% blast count required) FLT3, IDH1, IDH2, KIT, KRAS, NRAS, NPM1, PDGFRA, TP53, WT1. CEBPA (Minimum 30% blasts required)."];
-var v35 = ["Short Acute Myeloid Panel: (Minimum 20% blast count required) FLT3, NPM1, CEBPA."];
+var v31 = ["Lymphoid: (yellow top tube (ACD) or purple top tube (EDTA)) FISH and flow cytometry, no known molecular marker (August 2016)."];
+var v32 = ["Complete Myeloproliferative Neoplasm Panel: (yellow top tube (ACD) or purple top tube (EDTA)) (blood or bone marrow only) (includes Molecular NGS and rt-PCR BCR-ABL1) JAK2, CALR, MPL. BCR-ABL1 major quantitative (p210). BCR-ABL1 minor qualitative (p190)."];
+var v33 = ["Short Myeloproliferative Neoplasm Panel: (yellow top tube (ACD) or purple top tube (EDTA)) (blood or bone marrow only) (includes Molecular NGS only) JAK2, CALR, MPL."];
+var v34 = ["Complete Acute Myeloid Panel: (yellow top tube (ACD) or purple top tube (EDTA)) (Minimum 20% blast count required) FLT3, IDH1, IDH2, KIT, KRAS, NRAS, NPM1, PDGFRA, TP53, WT1. CEBPA (Minimum 30% blasts required)."];
+var v35 = ["Short Acute Myeloid Panel: (yellow top tube (ACD) or purple top tube (EDTA)) (Minimum 20% blast count required) FLT3, NPM1, CEBPA."];
 
 // survey question vertices
 // vertices must be placed into survey tree in Depth-First order
