@@ -15,6 +15,12 @@ h2 {
 	text-align: center;    
 }
 
+h3 {           
+	border: 1px solid;    
+	color:#39F;    
+	text-align: center;    
+}
+
 p {    
 	color:#09F;    
 	text-indent: 20px;        
